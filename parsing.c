@@ -6,7 +6,7 @@
 /*   By: tony <tony@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 11:51:52 by toroman           #+#    #+#             */
-/*   Updated: 2024/12/28 15:06:29 by tony             ###   ########.fr       */
+/*   Updated: 2024/12/28 15:07:47 by tony             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	checkrectangle(t_map *copie)
 	{
 		if (ft_strlen(copie->map[i]) != countligne)
 		{
-			ft_printf("the map is not rectangular");
+			ft_printf("tony la caille");
 			exit(EXIT_FAILURE);
 		}
 		i++;
