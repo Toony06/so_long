@@ -6,22 +6,19 @@
 /*   By: toroman <toroman@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 11:51:52 by toroman           #+#    #+#             */
-/*   Updated: 2024/12/28 15:17:00 by toroman          ###   ########.fr       */
+/*   Updated: 2024/12/28 16:10:14 by toroman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	checkfiles(char *av)
+void	checkfiles(char *av, t_map *copie)
 {
 	int	fd;
 
 	fd = open(av, O_RDONLY);
 	if (fd < 0)
-	{
-		ft_printf("ERROR\ncannot open this files");
-		exit(EXIT_FAILURE);
-	}
+		ft_error("ERROR:\ncannot open this file", copie);
 	close (fd);
 }
 
@@ -53,10 +50,7 @@ void	colone(t_map *copie, char *av)
 	fd = open(av, O_RDONLY);
 	count = get_next_line(fd);
 	if (!count)
-	{
-		ft_printf("ERROR\n files its NULL");
-		exit(EXIT_FAILURE);
-	}
+		ft_error("Error:\nthis file is null", copie);
 	copie->sizecolone = 0;
 	while (count)
 	{
@@ -77,10 +71,21 @@ void	checkrectangle(t_map *copie)
 	while (copie->map[i])
 	{
 		if (ft_strlen(copie->map[i]) != countligne)
-		{
-			ft_printf("Error:\nthe map is not rectangular");
-			exit(EXIT_FAILURE);
-		}
+			ft_error("error", copie);
 		i++;
 	}
+	ft_printf("This map its valid");
+}
+void	ft_error(char *str, t_map *copie)
+{
+	int	i;
+
+	i = 0;
+	ft_printf(str);
+	while(copie->map[i])
+	{
+		free(copie->map[i++]);
+	}
+	free (copie->map);
+	exit(EXIT_FAILURE);
 }
