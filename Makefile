@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: toroman <toroman@student.42nice.fr>        +#+  +:+       +#+         #
+#    By: tony <tony@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/26 09:33:14 by toroman           #+#    #+#              #
-#    Updated: 2024/12/26 11:52:17 by toroman          ###   ########.fr        #
+#    Updated: 2024/12/28 22:05:25 by tony             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,6 @@ CFLAGS = -Wall -Wextra -Werror -g3
 RM = rm -rf
 LIBFT = ./utils
 INCLUDES = -I/usr/include -Imlx -Iincludes
-MLX_FLAGS = -Lmlx -lmlx -L/usr/lib/X11 -lXext -lX11
 
 all : ${NAME}
 
