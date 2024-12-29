@@ -6,7 +6,7 @@
 /*   By: tony <tony@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 11:51:52 by toroman           #+#    #+#             */
-/*   Updated: 2024/12/29 23:07:13 by tony             ###   ########.fr       */
+/*   Updated: 2024/12/29 23:29:52 by tony             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	checkrectangle(t_map *copie)
 	while (copie->map[i])
 	{
 		if (ft_strlen(copie->map[i]) != copie->countligne)
-			ft_error("error", copie);
+			ft_error("Error:\nthis map its not valid", copie);
 		i++;
 	}
 }
@@ -95,24 +95,24 @@ void	checkwall(t_map *copie)
 	while (copie->map[0][copie->i] && copie->map[0][copie->i] != '\n')
 	{
 		if (copie->map[0][copie->i++] != '1')
-			ft_error("error", copie);
+			ft_error("Error:\nthe first line or not available", copie);
 	}
 	copie->i = 0;
 	while (copie->map[copie->sizecolone - 1][copie->i] && copie->map[copie->sizecolone - 1][copie->i] != '\n')
 	{
 		if (copie->map[copie->sizecolone - 1][copie->i++] != '1')
-			ft_error("error", copie);
+			ft_error("Error:\nthe last line or not avaible", copie);
 	}
 	copie->i = 0;
 	while (copie->i < copie->sizecolone)
 	{
 		if (copie->map[copie->i++][0] != '1')
-			ft_error("error", copie);
+			ft_error("Error:\nthe first column or not avaible", copie);
 	}
 	copie->i = 0;
 	while(copie->i < copie->sizecolone)
 	{
 		if (copie->map[copie->i++][copie->countligne - 2] != '1')
-			ft_error("error", copie);
+			ft_error("Error:\nthe last column or not avaible", copie);
 	}
 }
