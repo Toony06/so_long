@@ -6,7 +6,7 @@
 /*   By: tony <tony@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 11:51:52 by toroman           #+#    #+#             */
-/*   Updated: 2024/12/29 23:29:52 by tony             ###   ########.fr       */
+/*   Updated: 2024/12/30 22:33:04 by tony             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,5 +114,51 @@ void	checkwall(t_map *copie)
 	{
 		if (copie->map[copie->i++][copie->countligne - 2] != '1')
 			ft_error("Error:\nthe last column or not avaible", copie);
+	}
+}
+void checkinterior(t_map *copie)
+{
+	copie->i = 0;
+	copie->exit = 0;
+	copie->position = 0;
+	copie->collect = 0;
+	while (copie->map[copie->i])
+	{
+		copie->j = 0;
+		while(copie->map[copie->i][copie->j])
+		{
+			if (copie->map[copie->i][copie->j] == 'E')
+				copie->exit++;
+			if (copie->map[copie->i][copie->j] == 'P')
+				copie->position++;
+			if (copie->map[copie->i][copie->j] == 'C')
+				copie->collect++;
+			else if (copie->exit > 1 || copie->position > 1)
+				ft_error("Error:\nthis map has more E or P", copie);
+			copie->j++;
+		}
+		copie->i++;
+	}
+	if (copie->exit == 0 || copie->position == 0 || copie->collect < 1)
+		ft_error("Error:\ninterrior or not avaible", copie);
+}
+void	checkinterrior2(t_map *copie)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (copie->map[i])
+	{
+		j = 0;
+		while (copie->map[i][j])
+		{
+			if (copie->map[i][j] != '1' && copie->map[i][j] != '0' &&
+				copie->map[i][j] != 'E' && copie->map[i][j] != 'C' &&
+				copie->map[i][j] != 'P' && copie->map[i][j] != '\n')
+					ft_error("Error:\this map are other char", copie);
+				j++;
+		}
+		i++;
 	}
 }
