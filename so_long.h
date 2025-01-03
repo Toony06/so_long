@@ -6,7 +6,7 @@
 /*   By: tony <tony@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:03:23 by toroman           #+#    #+#             */
-/*   Updated: 2024/12/30 21:39:58 by tony             ###   ########.fr       */
+/*   Updated: 2025/01/03 20:29:49 by tony             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct s_map
 {
 	char	**map;
 	char	*ligne;
+	char	**map_copy;
 	int		sizecolone;
 	int		i;
 	size_t	countligne;;
@@ -32,6 +33,8 @@ typedef struct s_map
 	int		collect;
 	int		exit;
 	int		j;
+	int		start_i;
+	int		start_j;
 } t_map;
 
 void	checkfiles(char *av, t_map *copie);
@@ -42,4 +45,8 @@ void	ft_error(char *str, t_map *copie);
 void	checkwall(t_map *copie);
 void 	checkinterior(t_map *copie);
 void	checkinterrior2(t_map *copie);
+void	checkposition(t_map *copie);
+void	flood_fill(t_map *copie, int i, int j);
+char	**copymap(t_map *copie);
+void	print_mapcopy(t_map *copie);
 #endif

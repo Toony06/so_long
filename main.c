@@ -6,7 +6,7 @@
 /*   By: tony <tony@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:03:10 by toroman           #+#    #+#             */
-/*   Updated: 2024/12/30 21:40:25 by tony             ###   ########.fr       */
+/*   Updated: 2025/01/03 20:29:39 by tony             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,9 @@ int	main(int ac, char **av)
 		checkwall(&unnom);
 		checkinterior(&unnom);
 		checkinterrior2(&unnom);
+		checkposition(&unnom);
+		flood_fill(&unnom, copie.start_i, copie.start_j);
+		copymap(&unnom);
+		print_mapcopy(&unnom);
 	}
 }
