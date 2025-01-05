@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tony <tony@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: iheb <iheb@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:03:23 by toroman           #+#    #+#             */
-/*   Updated: 2025/01/03 20:29:49 by tony             ###   ########.fr       */
+/*   Updated: 2025/01/05 14:07:01 by iheb             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,6 @@ void	checkinterrior2(t_map *copie);
 void	checkposition(t_map *copie);
 void	flood_fill(t_map *copie, int i, int j);
 char	**copymap(t_map *copie);
-void	print_mapcopy(t_map *copie);
+void	print_mapcopy(char **map);
+void	parsing(t_map	*copie);
 #endif
