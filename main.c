@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iheb <iheb@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: tony <tony@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:03:10 by toroman           #+#    #+#             */
-/*   Updated: 2025/01/05 14:21:51 by iheb             ###   ########.fr       */
+/*   Updated: 2025/01/05 15:21:44 by tony             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,5 @@ void parsing(t_map	*copie)
 		copie->map_copy = copymap(copie);
 		flood_fill(copie, copie->start_i, copie->start_j);
 		print_mapcopy(copie->map_copy);
+		checkflood(copie);
 }

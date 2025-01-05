@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iheb <iheb@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: tony <tony@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:03:23 by toroman           #+#    #+#             */
-/*   Updated: 2025/01/05 14:07:01 by iheb             ###   ########.fr       */
+/*   Updated: 2025/01/05 15:20:44 by tony             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,5 @@ void	flood_fill(t_map *copie, int i, int j);
 char	**copymap(t_map *copie);
 void	print_mapcopy(char **map);
 void	parsing(t_map	*copie);
+void	checkflood(t_map *copie);
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   floodfil.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iheb <iheb@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: tony <tony@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 19:07:00 by tony              #+#    #+#             */
-/*   Updated: 2025/01/05 14:18:07 by iheb             ###   ########.fr       */
+/*   Updated: 2025/01/05 15:24:57 by tony             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,30 @@ void	print_mapcopy(char **map)
 	while(map[i])
 	{
 		ft_printf(map[i]);
+		i++;
+	}
+}
+void	checkflood(t_map *copie)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (copie->map_copy[i])
+	{
+		j = 0;
+		while (copie->map_copy[i][j])
+		{
+			if (copie->map_copy[i][j] == 'C')
+				ft_error("Error:\nnot reach all collectible", copie);
+			if (copie->map_copy[i][j] == 'E')
+			{
+				if (copie->map_copy[i + 1][j] != 'V' && copie->map_copy[i - 1][j] != 'V' &&
+					copie->map_copy[i][j + 1] != 'V' && copie->map_copy[i][j - 1] != 'V')
+						ft_error("Error:\nexit are not valid", copie);
+			}
+			j++;
+		}
 		i++;
 	}
 }
