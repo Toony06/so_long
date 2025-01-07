@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toroman <toroman@student.42nice.fr>        +#+  +:+       +#+        */
+/*   By: tony <tony@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:03:23 by toroman           #+#    #+#             */
-/*   Updated: 2025/01/07 10:46:43 by toroman          ###   ########.fr       */
+/*   Updated: 2025/01/07 19:11:31 by tony             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,11 @@ typedef struct s_game
 	void	*mlx_ptr;
 	void	*mlx_win;
 	char	**map;
+	void	*background;
+	void	*wall;
+	void	*player;
+	void	*collectible;
+	void	*exit;
 }	t_game;
 
 void	checkfiles(char *av, t_map *copie);

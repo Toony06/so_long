@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mlx.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toroman <toroman@student.42nice.fr>        +#+  +:+       +#+        */
+/*   By: tony <tony@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 09:32:38 by toroman           #+#    #+#             */
-/*   Updated: 2025/01/07 10:12:25 by toroman          ###   ########.fr       */
+/*   Updated: 2025/01/07 19:30:28 by tony             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,3 +42,8 @@ void	handle_keypress(int codekey, t_game *game)
 	if (codekey == ESC_KEY)
 		close_window(game);
 }
+
+// void	to_load_image(t_game *game)
+// {
+	
+// }

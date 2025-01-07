@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toroman <toroman@student.42nice.fr>        +#+  +:+       +#+        */
+/*   By: tony <tony@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:03:10 by toroman           #+#    #+#             */
-/*   Updated: 2025/01/07 10:22:26 by toroman          ###   ########.fr       */
+/*   Updated: 2025/01/07 19:27:55 by tony             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int	main(int ac, char **av)
 {
 	t_map copie;
+	t_game game;
 	if (ac != 2)
 	{
 		ft_printf("ERROR\nits not 2 arguments");

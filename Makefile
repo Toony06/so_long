@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: toroman <toroman@student.42nice.fr>        +#+  +:+       +#+         #
+#    By: tony <tony@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/26 09:33:14 by toroman           #+#    #+#              #
-#    Updated: 2025/01/07 10:18:27 by toroman          ###   ########.fr        #
+#    Updated: 2025/01/07 19:17:54 by tony             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = main.c parsing.c parsing2.c floodfil.c mlx.C
+SRCS = main.c parsing.c parsing2.c floodfil.c mlx.c
 OBJS = ${SRCS:.c=.o}
 NAME = so_long
 CC = gcc
