@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tony <tony@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: toroman <toroman@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 11:51:52 by toroman           #+#    #+#             */
-/*   Updated: 2024/12/31 22:54:17 by tony             ###   ########.fr       */
+/*   Updated: 2025/01/07 10:38:25 by toroman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ void	checkfiles(char *av, t_map *copie)
 	close (fd);
 }
 
-void copiemap(t_map *copie, char *av)
+void	copiemap(t_map *copie, char *av)
 {
-	int	fd;
-	int	i;
-	char *ligne;
+	int		fd;
+	int		i;
+	char	*ligne;
 
 	i = 0;
 	fd = open(av, O_RDONLY);
@@ -37,14 +37,13 @@ void copiemap(t_map *copie, char *av)
 		copie->map[i++] = ft_strdup(ligne);
 		free(ligne);
 		ligne = get_next_line(fd);
-		
 	}
 	copie->map[i] = NULL;
-
 }
+
 void	colone(t_map *copie, char *av)
 {
-	int	fd;
+	int		fd;
 	char	*count;
 
 	fd = open(av, O_RDONLY);
@@ -74,13 +73,14 @@ void	checkrectangle(t_map *copie)
 		i++;
 	}
 }
+
 void	ft_error(char *str, t_map *copie)
 {
 	int	i;
 
 	i = 0;
 	ft_printf(str);
-	while(copie->map[i])
+	while (copie->map[i])
 	{
 		free(copie->map[i]);
 		i++;

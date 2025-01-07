@@ -3,21 +3,23 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tony <tony@student.42.fr>                  +#+  +:+       +#+         #
+#    By: toroman <toroman@student.42nice.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/26 09:33:14 by toroman           #+#    #+#              #
-#    Updated: 2025/01/02 19:32:42 by tony             ###   ########.fr        #
+#    Updated: 2025/01/07 10:18:27 by toroman          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = main.c parsing.c parsing2.c floodfil.c
+SRCS = main.c parsing.c parsing2.c floodfil.c mlx.C
 OBJS = ${SRCS:.c=.o}
 NAME = so_long
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g3
+MLX_FLAGS = -lmlx -framework OpenGL -framework AppKit
 RM = rm -rf
 LIBFT = ./utils
 INCLUDES = -I/usr/include -Imlx -Iincludes
+MLX_FLAGS = -Lmlx -lmlx -L/usr/lib/X11 -lXext -lX11
 
 all : ${NAME}
 
