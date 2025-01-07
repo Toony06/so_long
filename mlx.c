@@ -6,7 +6,7 @@
 /*   By: tony <tony@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 09:32:38 by toroman           #+#    #+#             */
-/*   Updated: 2025/01/07 19:30:28 by tony             ###   ########.fr       */
+/*   Updated: 2025/01/07 19:46:31 by tony             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,19 @@ void	init_map(t_game *game, char **map)
 	mlx_key_hook(game->mlx_win, handle_keypress, game);
 }
 
-void	close_window(t_game *game)
+int	close_window(t_game *game)
 {
 	if (game->mlx_win)
 		mlx_destroy_window(game->mlx_ptr, game->mlx_win);
 	exit(EXIT_FAILURE);
+	return (0);
 }
 
-void	handle_keypress(int codekey, t_game *game)
+int	handle_keypress(int codekey, t_game *game)
 {
 	if (codekey == ESC_KEY)
 		close_window(game);
+	return (0);
 }
 
 // void	to_load_image(t_game *game)

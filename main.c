@@ -6,7 +6,7 @@
 /*   By: tony <tony@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:03:10 by toroman           #+#    #+#             */
-/*   Updated: 2025/01/07 19:27:55 by tony             ###   ########.fr       */
+/*   Updated: 2025/01/07 19:43:05 by tony             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ int	main(int ac, char **av)
 		colone(&copie, av[1]);
 		copiemap(&copie, av[1]);
 		parsing(&copie);
+		close_window(&game);
+		handle_keypress(ESC_KEY, &game);
+
 	}
 }
 void parsing(t_map	*copie)

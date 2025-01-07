@@ -6,7 +6,7 @@
 /*   By: tony <tony@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:03:23 by toroman           #+#    #+#             */
-/*   Updated: 2025/01/07 19:11:31 by tony             ###   ########.fr       */
+/*   Updated: 2025/01/07 19:47:03 by tony             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,6 @@ void	print_mapcopy(char **map);
 void	parsing(t_map	*copie);
 void	checkflood(t_map *copie);
 void	init_map(t_game *game, char **map);
-void	close_window(t_game *game);
-void	handle_keypress(int codekey, t_game *game);
+int	close_window(t_game *game);
+int	handle_keypress(int codekey, t_game *game);
 #endif
