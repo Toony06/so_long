@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tony <tony@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: toroman <toroman@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:03:23 by toroman           #+#    #+#             */
-/*   Updated: 2025/01/07 19:47:03 by tony             ###   ########.fr       */
+/*   Updated: 2025/01/08 12:34:06 by toroman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,10 @@ typedef struct s_map
 
 typedef struct s_game
 {
-	void	*mlx_ptr;
-	void	*mlx_win;
+	int		height;
+	int		width;
+	void	*mlx;
+	void	*wind;
 	char	**map;
 	void	*background;
 	void	*wall;
@@ -67,5 +69,5 @@ void	parsing(t_map	*copie);
 void	checkflood(t_map *copie);
 void	init_map(t_game *game, char **map);
 int	close_window(t_game *game);
-int	handle_keypress(int codekey, t_game *game);
+
 #endif
