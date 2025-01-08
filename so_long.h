@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toroman <toroman@student.42nice.fr>        +#+  +:+       +#+        */
+/*   By: tony <tony@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:03:23 by toroman           #+#    #+#             */
-/*   Updated: 2025/01/08 12:34:06 by toroman          ###   ########.fr       */
+/*   Updated: 2025/01/08 23:26:21 by tony             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,14 @@ typedef struct s_game
 	void	*player;
 	void	*collectible;
 	void	*exit;
+	t_map	*copie;
+	int		x;
+	int		y;
+	int		count;
+	int		player_x;
+	int		player_y;
+	int		collected;
+	int		total_collected;
 }	t_game;
 
 void	checkfiles(char *av, t_map *copie);
@@ -65,9 +73,10 @@ void	checkposition(t_map *copie);
 void	flood_fill(t_map *copie, int i, int j);
 char	**copymap(t_map *copie);
 void	print_mapcopy(char **map);
-void	parsing(t_map	*copie);
+void	parsing(t_map *copie, t_game *game);
 void	checkflood(t_map *copie);
 void	init_map(t_game *game, char **map);
-int	close_window(t_game *game);
+void	load_image(t_game *game);
+void	copie_game(t_game *game, t_map *map);
 
 #endif
