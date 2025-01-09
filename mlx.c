@@ -6,7 +6,7 @@
 /*   By: tony <tony@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 09:32:38 by toroman           #+#    #+#             */
-/*   Updated: 2025/01/08 23:35:15 by tony             ###   ########.fr       */
+/*   Updated: 2025/01/09 10:42:36 by tony             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	init_map(t_game *game, char **map)
 {
-	game->height = 0;
+	game->count = 0;
 	game->mlx = mlx_init();
 	if (!game->mlx)
 		exit(EXIT_FAILURE);
 	game->map = map;
-	game->width = 0;
+	game->height = 0;
 	while (map[game->height])
 		game->height++;
 	game->width = ft_strlen(map[0]);
@@ -29,14 +29,17 @@ void	init_map(t_game *game, char **map)
 
 void	load_image(t_game *game)
 {
-	int	x;
-	int	y;
+	int	height;
+	int width;
 
-	game->background = mlx_xpm_file_to_image(game->mlx, "xpm/sol.xpm", &x, &y);
-	game->wall = mlx_xpm_file_to_image(game->mlx, "xpm/wall.xpm", &x, &y);
-	game->player = mlx_xpm_file_to_image(game->mlx, "xpm/player.xpm", &x, &y);
-	game->collectible = mlx_xpm_file_to_image(game->mlx, "xpm/collectible.xpm", &x, &y);
-	game->exit = mlx_xpm_file_to_image(game->mlx, "xpm/exit.xpm", &x, &y);
+	height = 0;
+	width = 0;
+	game->background = mlx_xpm_file_to_image(game->mlx, "xpm/sol.xpm", &height, &width);
+	game->wall = mlx_xpm_file_to_image(game->mlx, "xpm/wall.xpm", &height, &width);
+	game->player = mlx_xpm_file_to_image(game->mlx, "xpm/player.xpm", &height, &width);
+	game->collectible = mlx_xpm_file_to_image(game->mlx, 
+						"xpm/collectible.xpm", &height, &width);
+	game->exit = mlx_xpm_file_to_image(game->mlx, "xpm/exit.xpm", &height, &width);
 	if (!game->background || !game->wall || !game->player
 			|| !game->collectible || !game->exit)
 		{
