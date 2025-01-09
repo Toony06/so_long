@@ -6,7 +6,7 @@
 /*   By: tony <tony@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 09:32:38 by toroman           #+#    #+#             */
-/*   Updated: 2025/01/09 10:42:36 by tony             ###   ########.fr       */
+/*   Updated: 2025/01/09 13:51:55 by tony             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,20 +53,30 @@ void	load_image(t_game *game)
 
 static void	put_image(t_game *game, t_map *map, int x, int y)
 {
-	mlx_put_image_to_window(game->mlx, game->wind, game->background,
-			x * 64, y * 64);
-	if (map->map[x][y] == '1')
-		mlx_put_image_to_window(game->mlx, game->wind, game->wall,
-			x * 64, y * 64);
-	if (map->map[x][y] == 'C')
-		mlx_put_image_to_window(game->mlx, game->wind, game->collectible,
-			x * 64, y * 64);
-	if (map->map[x][y] == 'P')
-		mlx_put_image_to_window(game->mlx, game->wind, game->player,
-			x * 64, y * 64);
-	if (map->map[x][y] == 'E')
-		mlx_put_image_to_window(game->mlx, game->wind, game->exit,
-			x * 64, y * 64);
+	x = 0;
+	while (x < game->height)
+	{
+		y = 0;
+		while (y < game->width)
+		{
+			mlx_put_image_to_window(game->mlx, game->wind, game->background,
+					x * 64, y * 64);
+			if (map->map[x][y] == '1')
+				mlx_put_image_to_window(game->mlx, game->wind, game->wall,
+					x * 64, y * 64);
+			if (map->map[x][y] == 'C')
+				mlx_put_image_to_window(game->mlx, game->wind, game->collectible,
+					x * 64, y * 64);
+			if (map->map[x][y] == 'P')
+				mlx_put_image_to_window(game->mlx, game->wind, game->player,
+					x * 64, y * 64);
+			if (map->map[x][y] == 'E')
+				mlx_put_image_to_window(game->mlx, game->wind, game->exit,
+					x * 64, y * 64);
+			y++;
+		}
+		x++;
+	}
 }
 
 void	copie_game(t_game *game, t_map *map)
