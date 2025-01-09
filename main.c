@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toroman <toroman@student.42nice.fr>        +#+  +:+       +#+        */
+/*   By: tony <tony@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:03:10 by toroman           #+#    #+#             */
-/*   Updated: 2025/01/09 18:57:29 by toroman          ###   ########.fr       */
+/*   Updated: 2025/01/09 22:56:28 by tony             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,11 @@ int	main(int ac, char **av)
 	colone(&copie, av[1]);
 	copiemap(&copie, av[1]);
 	parsing(&copie, &game);
+	load_textures(&game);
+	draw_map(&game, &copie);
+	mlx_loop(&game);
+	return (0);
+
 }
 
 void parsing(t_map	*copie, t_game	*game)
@@ -46,5 +51,4 @@ void parsing(t_map	*copie, t_game	*game)
 		game->player_y = copie->start_j;
 		game->total_collected = copie->collect;
 		game->collected = 0;
-		mlx_loop(game->mlx);
 }
