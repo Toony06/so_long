@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tony <tony@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: toroman <toroman@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:03:23 by toroman           #+#    #+#             */
-/*   Updated: 2025/01/08 23:26:21 by tony             ###   ########.fr       */
+/*   Updated: 2025/01/09 18:57:07 by toroman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ typedef struct s_game
 	void	*player;
 	void	*collectible;
 	void	*exit;
+	void	*img;
 	t_map	*copie;
 	int		x;
 	int		y;
@@ -76,7 +77,8 @@ void	print_mapcopy(char **map);
 void	parsing(t_map *copie, t_game *game);
 void	checkflood(t_map *copie);
 void	init_map(t_game *game, char **map);
-void	load_image(t_game *game);
-void	copie_game(t_game *game, t_map *map);
+int		close_window(t_game *game);
+int		handle_keypress(int keycode, t_game *game);
+void	load_textures(t_game *game);
 
 #endif
