@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mlx.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toroman <toroman@student.42nice.fr>        +#+  +:+       +#+        */
+/*   By: tony <tony@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 09:32:38 by toroman           #+#    #+#             */
-/*   Updated: 2025/01/10 14:27:39 by toroman          ###   ########.fr       */
+/*   Updated: 2025/01/11 00:46:13 by tony             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,11 @@ void	load_textures(t_game *game)
 	game->background = mlx_xpm_file_to_image(game->mlx,
 			"xpm/sol.xpm", &width, &height);
 	game->wall = mlx_xpm_file_to_image(game->mlx,
-			"xpm/wall.xpm", &width, &height);
+			"xpm/wall3.xpm", &width, &height);
 	game->player = mlx_xpm_file_to_image(game->mlx,
 			"xpm/player.xpm", &width, &height);
 	game->col = mlx_xpm_file_to_image(game->mlx,
-			"xpm/collectible.xpm", &width, &height);
+			"xpm/collectible4.xpm", &width, &height);
 	game->exit = mlx_xpm_file_to_image(game->mlx, "xpm/exit.xpm",
 			&width, &height);
 	if (!game->background || !game->wall || !game->player || !game->col
