@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tony <tony@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: toroman <toroman@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:03:23 by toroman           #+#    #+#             */
-/*   Updated: 2025/01/09 22:40:39 by tony             ###   ########.fr       */
+/*   Updated: 2025/01/10 14:25:08 by toroman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,12 @@ typedef struct s_game
 	int		height;
 	int		width;
 	void	*mlx;
-	void	*wind;
+	void	*w;
 	char	**map;
 	void	*background;
 	void	*wall;
 	void	*player;
-	void	*collectible;
+	void	*col;
 	void	*exit;
 	void	*img;
 	t_map	*copie;

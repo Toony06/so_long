@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tony <tony@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: toroman <toroman@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:03:10 by toroman           #+#    #+#             */
-/*   Updated: 2025/01/09 22:56:28 by tony             ###   ########.fr       */
+/*   Updated: 2025/01/10 13:56:34 by toroman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	main(int ac, char **av)
 	parsing(&copie, &game);
 	load_textures(&game);
 	draw_map(&game, &copie);
-	mlx_loop(&game);
+	mlx_loop(game.mlx);
 	return (0);
 
 }
