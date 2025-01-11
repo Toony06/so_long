@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toroman <toroman@student.42nice.fr>        +#+  +:+       +#+        */
+/*   By: tony <tony@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:03:10 by toroman           #+#    #+#             */
-/*   Updated: 2025/01/10 13:56:34 by toroman          ###   ########.fr       */
+/*   Updated: 2025/01/11 16:53:48 by tony             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ void parsing(t_map	*copie, t_game	*game)
 		print_mapcopy(copie->map_copy);
 		checkflood(copie);
 		init_map(game, copie->map);
-		game->player_x = copie->start_i;
-		game->player_y = copie->start_j;
+		game->player_x = copie->start_j;
+		game->player_y = copie->start_i;
 		game->total_collected = copie->collect;
 		game->collected = 0;
 }

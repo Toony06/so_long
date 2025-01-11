@@ -6,11 +6,11 @@
 #    By: tony <tony@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/26 09:33:14 by toroman           #+#    #+#              #
-#    Updated: 2025/01/07 19:17:54 by tony             ###   ########.fr        #
+#    Updated: 2025/01/11 17:10:01 by tony             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = main.c parsing.c parsing2.c floodfil.c mlx.c
+SRCS = main.c parsing.c parsing2.c floodfil.c mlx.c mlx2.c
 OBJS = ${SRCS:.c=.o}
 NAME = so_long
 CC = gcc
