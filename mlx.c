@@ -6,7 +6,7 @@
 /*   By: tony <tony@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 09:32:38 by toroman           #+#    #+#             */
-/*   Updated: 2025/01/11 17:04:00 by tony             ###   ########.fr       */
+/*   Updated: 2025/01/11 21:13:33 by tony             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ int	handle_keypress(int keycode, t_game *game)
 		moove(game, m, game->player_x, game->player_y + 1);
 	else if (keycode == D_KEY && game->player_x < game->width)
 		moove(game, m, game->player_x + 1, game->player_y);
+	if (keycode == Z_KEY || keycode == Q_KEY || keycode == S_KEY || keycode == D_KEY)
+		game->count++;
 	return (0);
 }
 
