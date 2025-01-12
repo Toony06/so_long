@@ -6,7 +6,7 @@
 /*   By: tony <tony@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 09:32:38 by toroman           #+#    #+#             */
-/*   Updated: 2025/01/12 23:00:27 by tony             ###   ########.fr       */
+/*   Updated: 2025/01/12 23:13:13 by tony             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ int	close_window(t_game *game)
 
 int	handle_keypress(int keycode, t_game *game)
 {
-	ft_printf("Key pressed: %d\n", keycode);
 	if (keycode == ESC_KEY)
 		close_window(game);
 	else if (keycode == Z_KEY && game->player_y > 0)
