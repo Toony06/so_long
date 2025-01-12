@@ -6,13 +6,13 @@
 /*   By: tony <tony@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 15:37:43 by tony              #+#    #+#             */
-/*   Updated: 2025/01/12 22:48:43 by tony             ###   ########.fr       */
+/*   Updated: 2025/01/12 23:07:02 by tony             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	moove(t_game *g, t_map *m, int new_x, int new_y)
+void	moove(t_game *g, int new_x, int new_y)
 {
 	if (new_x < 0 || new_x >= g->width || new_y < 0 || new_y >g->height)
 		return ;
@@ -28,6 +28,7 @@ void	moove(t_game *g, t_map *m, int new_x, int new_y)
 	if (g->map[new_y][new_x] == 'E')
 	{
 		if (g->collected == g->total_collected)
+		{
 			close_window(g);
 		return ;
 	}
@@ -35,5 +36,5 @@ void	moove(t_game *g, t_map *m, int new_x, int new_y)
 	g->map[new_y][new_x] = 'P';
 	g->player_y = new_y;
 	g->player_x = new_x;
-	draw_map(g, m);
+	draw_map(g);
 }

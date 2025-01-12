@@ -6,7 +6,7 @@
 /*   By: tony <tony@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:03:23 by toroman           #+#    #+#             */
-/*   Updated: 2025/01/12 22:51:09 by tony             ###   ########.fr       */
+/*   Updated: 2025/01/12 22:59:28 by tony             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,5 @@ int		close_window(t_game *game);
 int		handle_keypress(int keycode, t_game *game);
 void	load_textures(t_game *game);
 void	draw_map(t_game *g);
-void	moove(t_game *g, t_map *m, int new_x, int new_y);
+void	moove(t_game *g, int new_x, int new_y);
 #endif

@@ -6,7 +6,7 @@
 /*   By: tony <tony@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 09:32:38 by toroman           #+#    #+#             */
-/*   Updated: 2025/01/12 22:50:51 by tony             ###   ########.fr       */
+/*   Updated: 2025/01/12 23:00:27 by tony             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,18 +45,17 @@ int	close_window(t_game *game)
 
 int	handle_keypress(int keycode, t_game *game)
 {
-	t_map *m = game->copie;
 	ft_printf("Key pressed: %d\n", keycode);
 	if (keycode == ESC_KEY)
 		close_window(game);
 	else if (keycode == Z_KEY && game->player_y > 0)
-		moove(game, m, game->player_x, game->player_y - 1);
+		moove(game, game->player_x, game->player_y - 1);
 	else if (keycode == Q_KEY && game->player_x > 0)
-		moove(game, m, game->player_x - 1, game->player_y);
+		moove(game, game->player_x - 1, game->player_y);
 	else if (keycode == S_KEY && game->player_y < game->height)
-		moove(game, m, game->player_x, game->player_y + 1);
+		moove(game, game->player_x, game->player_y + 1);
 	else if (keycode == D_KEY && game->player_x < game->width)
-		moove(game, m, game->player_x + 1, game->player_y);
+		moove(game, game->player_x + 1, game->player_y);
 	if (keycode == Z_KEY || keycode == Q_KEY || keycode == S_KEY || keycode == D_KEY)
 		game->count++;
 	return (0);
