@@ -6,7 +6,7 @@
 /*   By: tony <tony@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 15:37:43 by tony              #+#    #+#             */
-/*   Updated: 2025/01/11 21:14:11 by tony             ###   ########.fr       */
+/*   Updated: 2025/01/12 18:43:55 by tony             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	moove(t_game *g, t_map *m, int new_x, int new_y)
 {
 	ft_printf("moove player : %d", g->count);
+	printf("Tentative de déplacement vers [%d][%d]\n", new_x, new_y);
 	if (m->map[new_y][new_x] == '1')
 		return ;
 	if (m->map[new_y][new_x] == 'C')

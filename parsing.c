@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toroman <toroman@student.42nice.fr>        +#+  +:+       +#+        */
+/*   By: tony <tony@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 11:51:52 by toroman           #+#    #+#             */
-/*   Updated: 2025/01/07 10:38:25 by toroman          ###   ########.fr       */
+/*   Updated: 2025/01/12 18:25:06 by tony             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ void	copiemap(t_map *copie, char *av)
 	i = 0;
 	fd = open(av, O_RDONLY);
 	copie->map = malloc(sizeof(char *) * (copie->sizecolone + 1));
+	if (!copie->map)
+		ft_error("Error", copie);
 	ligne = get_next_line(fd);
 	while (ligne)
 	{
