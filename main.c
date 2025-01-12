@@ -6,7 +6,7 @@
 /*   By: tony <tony@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:03:10 by toroman           #+#    #+#             */
-/*   Updated: 2025/01/11 20:56:10 by tony             ###   ########.fr       */
+/*   Updated: 2025/01/12 22:51:20 by tony             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(int ac, char **av)
 	copiemap(&copie, av[1]);
 	parsing(&copie, &game);
 	load_textures(&game);
-	draw_map(&game, &copie);
+	draw_map(&game);
 	mlx_loop(game.mlx);
 	return (0);
 

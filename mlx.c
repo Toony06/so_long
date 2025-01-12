@@ -6,7 +6,7 @@
 /*   By: tony <tony@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 09:32:38 by toroman           #+#    #+#             */
-/*   Updated: 2025/01/12 18:11:26 by tony             ###   ########.fr       */
+/*   Updated: 2025/01/12 22:50:51 by tony             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ void	init_map(t_game *game, char **map)
 	game->height = height;
 	game->width = width;
 	game->w = mlx_new_window(game->mlx, width * 64, height * 64, "So_long");
-	mlx_hook(game->w, 17, 0, close_window, game);
 	mlx_key_hook(game->w, handle_keypress, game);
+	mlx_hook(game->w, 17, 0, close_window, game);
 }
 
 int	close_window(t_game *game)
@@ -90,7 +90,7 @@ void	load_textures(t_game *game)
 	}
 }
 
-void	draw_map(t_game *g, t_map *map)
+void	draw_map(t_game *g)
 {
 	int	y;
 	int	x;
@@ -103,14 +103,14 @@ void	draw_map(t_game *g, t_map *map)
 		{
 			mlx_put_image_to_window(g->mlx, g->w, g->background,
 				x * 64, y * 64);
-			if (map->map[y][x] == '1')
+			if (g->map[y][x] == '1')
 				mlx_put_image_to_window(g->mlx, g->w, g->wall, x * 64, y * 64);
-			if (map->map[y][x] == 'P')
+			if (g->map[y][x] == 'P')
 				mlx_put_image_to_window(g->mlx, g->w, g->player, x * 64,
 					y * 64);
-			if (map->map[y][x] == 'E')
+			if (g->map[y][x] == 'E')
 				mlx_put_image_to_window(g->mlx, g->w, g->exit, x * 64, y * 64);
-			if (map->map[y][x] == 'C')
+			if (g->map[y][x] == 'C')
 				mlx_put_image_to_window(g->mlx, g->w, g->col, x * 64, y * 64);
 			x++;
 		}
