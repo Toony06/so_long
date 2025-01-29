@@ -6,7 +6,7 @@
 /*   By: toroman <toroman@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 15:37:43 by tony              #+#    #+#             */
-/*   Updated: 2025/01/29 12:11:24 by toroman          ###   ########.fr       */
+/*   Updated: 2025/01/29 14:00:39 by toroman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,6 @@ void	moove(t_game *g, int new_x, int new_y)
 
 int	exit_game(t_game *game, int flag)
 {
-	if (game->copie != NULL)
-		free_map(game->copie->map);
 	if (game->background)
 		mlx_destroy_image(game->mlx, game->background);
 	if (game->wall)
