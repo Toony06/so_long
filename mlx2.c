@@ -6,7 +6,7 @@
 /*   By: toroman <toroman@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 15:37:43 by tony              #+#    #+#             */
-/*   Updated: 2025/01/29 14:00:39 by toroman          ###   ########.fr       */
+/*   Updated: 2025/01/29 20:42:52 by toroman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ void	moove(t_game *g, int new_x, int new_y)
 		{
 			ft_printf("FELICITATION");
 			exit_game(g, 0);
-			return ;
 		}
+		return ;
 	}
 	g->map[g->player_y][g->player_x] = '0';
 	g->map[new_y][new_x] = 'P';
