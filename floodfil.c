@@ -6,7 +6,7 @@
 /*   By: toroman <toroman@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 19:07:00 by tony              #+#    #+#             */
-/*   Updated: 2025/01/07 10:36:18 by toroman          ###   ########.fr       */
+/*   Updated: 2025/01/29 12:02:27 by toroman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ void	flood_fill(t_map *copie, int i, int j)
 {
 	if (i < 0 || j < 0 || i >= copie->sizecolone
 		|| j >= (int)ft_strlen(copie->map_copy[i])
-		|| copie->map_copy[i][j] == '1' || copie->map_copy[i][j] == 'V')
+		|| copie->map_copy[i][j] == '1' || copie->map_copy[i][j] == 'V'
+		|| copie->map_copy[i][j] == 'E')
 		return ;
 	copie->map_copy[i][j] = 'V';
 	flood_fill(copie, i + 1, j);
@@ -51,34 +52,20 @@ void	flood_fill(t_map *copie, int i, int j)
 	flood_fill(copie, i, j - 1);
 }
 
-char	**copymap(t_map *copie)
+void copymap(t_map *copie)
 {
-	char	**map_copy;
 	int		i;
 
 	i = 0;
-	map_copy = malloc(sizeof(char *) * (copie->sizecolone + 1));
-	if (!map_copy)
-		return (NULL);
+	copie->map_copy = malloc(sizeof(char *) * (copie->sizecolone + 1));
+	if (!copie->map_copy)
+		ft_error("Error\n", copie);
 	while (i < copie->sizecolone)
 	{
-		map_copy[i] = ft_strdup(copie->map[i]);
+		copie->map_copy[i] = ft_strdup(copie->map[i]);
 		i++;
 	}
-	map_copy[i] = NULL;
-	return (map_copy);
-}
-
-void	print_mapcopy(char **map)
-{
-	int	i;
-
-	i = 0;
-	while (map[i])
-	{
-		ft_printf(map[i]);
-		i++;
-	}
+	copie->map_copy[i] = NULL;
 }
 
 void	checkflood(t_map *copie)

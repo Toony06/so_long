@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tony <tony@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: toroman <toroman@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:03:23 by toroman           #+#    #+#             */
-/*   Updated: 2025/01/12 22:59:28 by tony             ###   ########.fr       */
+/*   Updated: 2025/01/29 11:44:29 by toroman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 # include <mlx.h>
 
 # define ESC_KEY 65307
-# define Z_KEY	122
-# define Q_KEY	113
+# define W_KEY	119
+# define A_KEY	97
 # define S_KEY	115
 # define D_KEY	100
 
@@ -80,14 +80,14 @@ void	checkinterior(t_map	*copie);
 void	checkinterrior2(t_map *copie);
 void	checkposition(t_map *copie);
 void	flood_fill(t_map *copie, int i, int j);
-char	**copymap(t_map *copie);
-void	print_mapcopy(char **map);
+void	copymap(t_map *copie);
 void	parsing(t_map *copie, t_game *game);
 void	checkflood(t_map *copie);
 void	init_map(t_game *game, char **map);
-int		close_window(t_game *game);
 int		handle_keypress(int keycode, t_game *game);
 void	load_textures(t_game *game);
 void	draw_map(t_game *g);
 void	moove(t_game *g, int new_x, int new_y);
+int		exit_game(t_game *game, int flag);
+void	free_map(char **map);
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tony <tony@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: toroman <toroman@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 11:51:52 by toroman           #+#    #+#             */
-/*   Updated: 2025/01/12 18:25:06 by tony             ###   ########.fr       */
+/*   Updated: 2025/01/29 11:56:31 by toroman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@ void	checkfiles(char *av, t_map *copie)
 {
 	int	fd;
 
+	fd = open(av, __O_DIRECTORY);
+	if (fd != -1)
+	{
+		ft_error("Error:\nits not file", copie);
+		exit(EXIT_FAILURE);
+	}
 	fd = open(av, O_RDONLY);
 	if (fd < 0)
 		ft_error("ERROR:\ncannot open this file", copie);
@@ -78,15 +84,10 @@ void	checkrectangle(t_map *copie)
 
 void	ft_error(char *str, t_map *copie)
 {
-	int	i;
-
-	i = 0;
 	ft_printf(str);
-	while (copie->map[i])
-	{
-		free(copie->map[i]);
-		i++;
-	}
-	free (copie->map);
+	if (copie->map != NULL)
+		free_map(copie->map);
+	else if (copie->map_copy != NULL)
+		free_map(copie->map_copy);
 	exit(EXIT_FAILURE);
 }

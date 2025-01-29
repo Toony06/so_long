@@ -6,12 +6,26 @@
 /*   By: toroman <toroman@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 22:53:10 by tony              #+#    #+#             */
-/*   Updated: 2025/01/07 10:40:36 by toroman          ###   ########.fr       */
+/*   Updated: 2025/01/15 19:27:00 by toroman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
+void	free_map(char **map)
+{
+	int	i;
+
+	if (!map)
+		return ;
+	i = 0;
+	while (map[i])
+	{
+		free(map[i]);
+		i++;
+	}
+	free(map);
+}
 void	checkwall(t_map *copie)
 {
 	copie->i = 0;
